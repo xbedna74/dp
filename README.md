@@ -42,3 +42,6 @@ It is necessary to have Arduino IDE installed (here https://www.arduino.cc/en/so
 5. Select "NodeMCU 1.0 (ESP-12E Module)" in Tools -> Board -> ESP8266 Boards.
 6. You need to change variables `ssid` and `password`, to values that will allow to connect to you WiFi.
 7. You need to change variables `mqtt_server`, `username_mqtt` and `password_mqtt` so that you can connect to you mqtt server.
+8. You also need to change location name in messages to your location name.
+9. Upload code to your NodeMCU.
+10. Plug in on the radiator valve and connect to electricity via USB.
