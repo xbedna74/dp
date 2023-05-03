@@ -25,13 +25,13 @@ In order to run mas you will need IntelliJ Idea (https://www.jetbrains.com/idea/
 2. Import libraries into the project that were donloaded, via File>Project Structure>Libraries.
 3. In file `CommunicationAgent.java` you need to change the address of variable broker to address of your MQTT server, and username and password in variables user and pwd.
 4. Create run configuration via Tools>Edit Configurations then click on + and select Application. In Main class field input `jade.Boot`, and in Program arguments input `-gui -agents start:agents.StartAgent(number_of_locations,number_of_users,room,...,user,...)`, arguments for StartAgent should be number of locations, number of users, then list the locations, and then list the users.
-5.Run configuration.
+5. Run configuration.
 
 ## Running user device locator
-1.Bootup your device (raspberrypi).
-2.Install needed packages via `sudo pip install paho-mqtt` and `sudo pip install bluepy`.
-3.In file `ble_rssi_scan.py` you need to change the address of your MQTT server, and username and password in method mqttConnect.
-4.Run script via `sudo python ble_rssi_scan.py <location> <edge_distance> <meter_distance>`.
+1. Bootup your device (raspberrypi).
+2. Install needed packages via `sudo pip install paho-mqtt` and `sudo pip install bluepy`.
+3. In file `ble_rssi_scan.py` you need to change the address of your MQTT server, and username and password in method mqttConnect.
+4. Run script via `sudo python ble_rssi_scan.py <location> <edge_distance> <meter_distance>`.
 
 ## Running thermostatic valve
 It is necessary to have Arduino IDE installed (here https://www.arduino.cc/en/software).
