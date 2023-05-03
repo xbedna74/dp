@@ -18,3 +18,27 @@ Connect DHT22 Vcc pin with 3v3 on NodeMCU, connect grounds between them, and con
 Lastly connect data pin and Vcc pin on DHT22 via resistor (10kΩ or 4.7kΩ).
 
 After this you have modified radiator valve. It can be powered via usb connected to NodeMCU, from normal phone charger adapter with 5V.
+
+##Running multi-agent system
+In order to run mas you will need IntelliJ Idea (https://www.jetbrains.com/idea/), and libraries in directory libraries.
+1. Create blank project in IntelliJ and import directories src/mas/agents and src/mas/qlearning.
+2. Import libraries into the project that were donloaded, via File>Project Structure>Libraries.
+3. In file `CommunicationAgent.java` you need to change the address of variable broker to address of your MQTT server, and username and password in variables user and pwd.
+4. Create run configuration via Tools>Edit Configurations then click on + and select Application. In Main class field input `jade.Boot`, and in Program arguments input `-gui -agents start:agents.StartAgent(number_of_locations,number_of_users,room,...,user,...)`, arguments for StartAgent should be number of locations, number of users, then list the locations, and then list the users.
+5.Run configuration.
+
+##Running user device locator
+1.Bootup your device (raspberrypi).
+2.Install needed packages via `sudo pip install paho-mqtt` and `sudo pip install bluepy`.
+3.In file `ble_rssi_scan.py` you need to change the address of your MQTT server, and username and password in method mqttConnect.
+4.Run script via `sudo python ble_rssi_scan.py <location> <edge_distance> <meter_distance>`.
+
+##Running thermostatic valve
+It is necessary to have Arduino IDE installed (here https://www.arduino.cc/en/software).
+1. Start the Arduino environment, open File -> Preferences.
+2. In the "Additional Board Manager URLs" window, enter this link https://arduino.esp8266.com/stable/package_esp8266com_index.json.
+3. Go to "Boards Manager" via Tools -> Board -> Boards Manager. Enter esp8266 here and install esp8266 from ESP8266 Community.
+4. Go to Tools -> Library manager and enter "DHT sensor library" and install it from the creator of Adafruit.
+5. Select "NodeMCU 1.0 (ESP-12E Module)" in Tools -> Board -> ESP8266 Boards.
+6. You need to change variables `ssid` and `password`, to values that will allow to connect to you WiFi.
+7. You need to change variables `mqtt_server`, `username_mqtt` and `password_mqtt` so that you can connect to you mqtt server.
