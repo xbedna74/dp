@@ -1,4 +1,5 @@
 # MAS for Smart home (heating)
+Multi-agent system for heating control in Smart home
 
 ## Creating custom thermostatic valve
 Needed parts:
