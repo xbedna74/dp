@@ -2,7 +2,6 @@
 Multi-agent system for heating control in Smart home
 
 ## Creating custom thermostatic valve
-Needed parts:
 
 Needed parts:
 1. Digital radiator valve eQ-3 N, https://www.amazon.de/-/cs/dp/B085LW2K1M/ref=sr_1_6?dchild=1&keywords=eq3+n&qid=1620651957&sr=8-6
