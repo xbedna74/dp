@@ -31,7 +31,8 @@ In order to run mas you will need IntelliJ Idea (https://www.jetbrains.com/idea/
 1. Bootup your device (raspberrypi).
 2. Install needed packages via `sudo pip install paho-mqtt` and `sudo pip install bluepy`.
 3. In file `ble_rssi_scan.py` you need to change the address of your MQTT server, and username and password in method mqttConnect.
-4. Run script via `sudo python ble_rssi_scan.py <location> <edge_distance> <meter_distance>`.
+4. Create file in same directory with name `users.txt`, that contains user name (same as name in multi-agent system) and users device name (BLE device) separated by comma. Users are separated by end of line.
+5. Run script via `sudo python ble_rssi_scan.py <location> <edge_distance> <meter_distance>`.
 
 ## Running thermostatic valve
 It is necessary to have Arduino IDE installed (here https://www.arduino.cc/en/software).
@@ -43,5 +44,6 @@ It is necessary to have Arduino IDE installed (here https://www.arduino.cc/en/so
 6. You need to change variables `ssid` and `password`, to values that will allow to connect to you WiFi.
 7. You need to change variables `mqtt_server`, `username_mqtt` and `password_mqtt` so that you can connect to you mqtt server.
 8. You also need to change location name in messages to your location name.
-9. Upload code to your NodeMCU.
-10. Plug in on the radiator valve and connect to electricity via USB.
+9. Optionally you can change PID coefficients (variables `kp`, `ki`, `kd`) that suit your needs the most.
+10. Upload code to your NodeMCU.
+11. Plug in on the radiator valve and connect to electricity via USB.
