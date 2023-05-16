@@ -21,6 +21,7 @@ After this you have modified radiator valve. It can be powered via usb connected
 
 ## Running multi-agent system
 In order to run mas you will need IntelliJ Idea (https://www.jetbrains.com/idea/), and libraries in directory libraries.
+It might be necessary to use Java 8, because of dependencies with JADE.
 1. Create blank project in IntelliJ and import directories src/mas/agents and src/mas/qlearning.
 2. Import libraries into the project that were donloaded, via File>Project Structure>Libraries.
 3. In file `CommunicationAgent.java` you need to change the address of variable broker to address of your MQTT server, and username and password in variables user and pwd.
